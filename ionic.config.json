@@ -1,5 +1,7 @@
 {
   "name": "mecha-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
