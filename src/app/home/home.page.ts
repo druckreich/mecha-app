@@ -7,6 +7,12 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  public mechas: any[] = [];
+
   constructor() {}
+
+  public addMecha() {
+    this.mechas.push(true);
+  }
 
 }
