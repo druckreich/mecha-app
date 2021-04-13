@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MechaComponent implements OnInit {
 
-  public availableSkills: string[] = [
+  public allSkills: string[] = [
     'Flying',
     'First strike',
     'Deathtouch',
@@ -20,18 +20,27 @@ export class MechaComponent implements OnInit {
     '+1/+1'
   ];
 
-  public addedSkills: string[] = [
 
-  ]
+  public availableSkills: string[] = [...this.allSkills];
 
+  public addedSkills: string[] = [];
 
   constructor() { }
 
   ngOnInit() {}
 
-  onDice() {
+  public onDice() {
     const dice: number = Math.floor(Math.random() * this.availableSkills.length);
     this.addedSkills.push(this.availableSkills[dice]);
     this.availableSkills.splice(dice, 1);
+  }
+
+  public onUndo() {
+    const lastSkill: string = this.addedSkills.pop();
+    this.availableSkills.push(lastSkill);
+  }
+
+  public hasSkill(skill: string): boolean {
+    return this.addedSkills.indexOf(skill) !== -1;
   }
 }

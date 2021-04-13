@@ -12,7 +12,10 @@ export class HomePage {
   constructor() {}
 
   public addMecha() {
-    this.mechas.push(true);
+    this.mechas.push(this.mechas.length);
   }
 
+  removeMecha(mecha: number) {
+    this.mechas.splice(mecha, 1);
+  }
 }

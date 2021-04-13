@@ -1,9 +1,18 @@
 <ion-card>
   <ion-img src="assets/mechagozilla.jpg"></ion-img>
   <ion-card-content>
-    {{addedSkills.join(", ")}}
+    <span *ngFor="let skill of allSkills; let i = index" class="skill" [ngClass]="{'has': hasSkill(skill)}">{{skill}}<span *ngIf="i !== allSkills.length - 1">, </span>
+    </span>
   </ion-card-content>
-  <ion-button expand="full" (click)="onDice()" *ngIf="availableSkills.length > 0">
-    <ion-icon name="dice" slot="icon-only"></ion-icon>
-  </ion-button>
+  <ion-footer>
+    <ion-row>
+      <ion-col>
+        <ion-button color="brown" [expand]="'full'" (click)="onDice()" [disabled]="availableSkills.length == 0">
+          <ion-icon name="dice"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+
+
 </ion-card>

@@ -1,4 +1,8 @@
-.mecha {
-  width: 256px;
-  margin: 12px;
+.skill {
+  color: #e2e2e2;
+  font-weight: normal;
+  &.has {
+    color: var(--ion-color-brown);
+    font-weight: normal;
+  }
 }
