@@ -14,7 +14,7 @@ export class HomePage {
   }
 
   public addMecha() {
-    this.mechas.push(this.mechas.length);
+    this.mechas.push(new Date().getTime());
   }
 
   async showCredits() {
@@ -27,5 +27,12 @@ export class HomePage {
       // buttons: ['OK']
     });
     await alert.present();
+  }
+
+  public handleDeath(index: number) {
+    console.log(this.mechas);
+    this.mechas.splice(this.mechas.indexOf(index), 1);
+    console.log(this.mechas);
+
   }
 }

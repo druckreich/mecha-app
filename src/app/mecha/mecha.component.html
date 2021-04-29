@@ -7,16 +7,17 @@
   <ion-footer>
     <ion-row>
       <ion-col>
-        <ion-button color="brown" [expand]="'full'" (click)="onDice()" [disabled]="!canDice()">
+        <ion-button color="tertiary" [expand]="'full'" (click)="onDice()" [disabled]="!canDice()">
           <ion-icon name="dice"></ion-icon>
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button color="red" [expand]="'full'" (click)="onKill()" [disabled]="!canKill()">
-          <ion-icon name="dice"></ion-icon>
+        <ion-button color="danger" [expand]="'full'" (click)="onKill()" [disabled]="!canKill()">
+          <ion-icon name="power-outline"></ion-icon>
         </ion-button>
       </ion-col>
     </ion-row>
+
   </ion-footer>
 
 

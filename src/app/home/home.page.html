@@ -8,7 +8,7 @@
 </ion-toolbar>
 
 <ion-content [fullscreen]="true">
-  <app-mecha *ngFor="let mecha of mechas"></app-mecha>
+  <app-mecha *ngFor="let mecha of mechas" (handleDeath)="handleDeath(mecha)"></app-mecha>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button color="brown" (click)="addMecha()">
       <ion-icon name="add"></ion-icon>

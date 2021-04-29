@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-mecha',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mecha.component.scss'],
 })
 export class MechaComponent implements OnInit {
+
+  @Output()
+  public handleDeath: EventEmitter<any> = new EventEmitter<any>();
 
   public allSkills: string[] = [
     'Flying',
@@ -25,7 +28,9 @@ export class MechaComponent implements OnInit {
 
   public addedSkills: string[] = [];
 
-  private isDead: boolean = false;
+  private isDead = false;
+
+
 
   constructor() { }
 
@@ -49,6 +54,7 @@ export class MechaComponent implements OnInit {
   }
 
   public onKill(): void {
+    this.handleDeath.next();
     this.isDead = true;
   }
 
