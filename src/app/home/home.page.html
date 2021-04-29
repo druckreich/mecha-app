@@ -1,8 +1,18 @@
+<ion-toolbar color="dark">
+  <ion-buttons slot="secondary">
+    <ion-button (click)="showCredits()">
+      <ion-icon slot="icon-only" name="help-circle-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-title>Mecha App</ion-title>
+</ion-toolbar>
+
 <ion-content [fullscreen]="true">
   <app-mecha *ngFor="let mecha of mechas"></app-mecha>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button color="primary" (click)="addMecha()">
-      <ion-icon name="add" style="zoom: 2"></ion-icon>
+    <ion-fab-button color="brown" (click)="addMecha()">
+      <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>
+

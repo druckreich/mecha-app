@@ -25,9 +25,13 @@ export class MechaComponent implements OnInit {
 
   public addedSkills: string[] = [];
 
+  private isDead: boolean = false;
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.isDead = false;
+  }
 
   public onDice() {
     const dice: number = Math.floor(Math.random() * this.availableSkills.length);
@@ -42,5 +46,17 @@ export class MechaComponent implements OnInit {
 
   public hasSkill(skill: string): boolean {
     return this.addedSkills.indexOf(skill) !== -1;
+  }
+
+  public onKill(): void {
+    this.isDead = true;
+  }
+
+  public canDice() {
+    return this.isDead === false && this.availableSkills.length > 0;
+  }
+
+  public canKill() {
+    return this.isDead === false;
   }
 }
