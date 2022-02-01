@@ -65,4 +65,17 @@ export class MechaComponent implements OnInit {
   public canKill() {
     return this.isDead === false;
   }
+
+  toggleSkill(skill: string) {
+    const existsIndex: number = this.addedSkills.indexOf(skill);
+    if(existsIndex > -1) {
+      this.addedSkills.splice(existsIndex, 1);
+      this.availableSkills.push(skill);
+    } else {
+      const availableIndex: number = this.availableSkills.indexOf(skill);
+      this.availableSkills.splice(availableIndex, 1);
+      this.addedSkills.push(skill);
+    }
+    console.log(this.addedSkills);
+  }
 }

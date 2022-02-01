@@ -1,7 +1,11 @@
 <ion-card>
   <ion-img src="assets/mechagozilla.jpg"></ion-img>
   <ion-card-content>
-    <span *ngFor="let skill of allSkills; let i = index" class="skill" [ngClass]="{'has': hasSkill(skill)}">{{skill}}<span *ngIf="i !== allSkills.length - 1">, </span>
+    <span *ngFor="let skill of allSkills; let i = index"
+          class="skill"
+          [ngClass]="{'has': hasSkill(skill)}"
+          (click)="toggleSkill(skill)">
+      {{skill}}
     </span>
   </ion-card-content>
   <ion-footer>
